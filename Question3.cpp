@@ -24,19 +24,23 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+
 int gcd(int a, int b)
 {
+    while (a != 0 && b != 0)
+    {
+        if (a > b)
+            a = a % b;
+        else
+            b = b % a;
+    }
+
     if (a == 0)
         return b;
-    else if (b == 0)
-        return a;
-    else if (a == b)
-        return a;
-    else if (a > b)
-        return gcd(a - b, b);
     else
-        return gcd(b - a, a);
+        return a;
 }
+
 int main()
 {
     cout << "enter 2 numbers " << endl;
