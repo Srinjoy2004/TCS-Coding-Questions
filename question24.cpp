@@ -1,7 +1,7 @@
-// decimal to binary
+// decimal to octal
 #include <bits/stdc++.h>
 using namespace std;
-int decimal_to_binary(int n)
+int octal_to_binary(int n)
 {
     if (n == 0)
         return stoi("0");
@@ -9,9 +9,9 @@ int decimal_to_binary(int n)
     while (n > 0)
     {
 
-        int digit = n % 2;
+        int digit = n % 8;
         res = to_string(digit) + res;
-        n = n / 2;
+        n = n / 8;
     }
     return stoi(res);
 }
@@ -21,7 +21,7 @@ int main()
     cout << "enter the number : ";
     cin >> n;
     cout << endl;
-    cout << decimal_to_binary(n);
+    cout << octal_to_binary(n);
 }
 
 
